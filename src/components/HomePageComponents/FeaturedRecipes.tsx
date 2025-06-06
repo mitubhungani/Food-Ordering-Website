@@ -32,9 +32,6 @@ const FeaturedRecipes = () => {
     setFoodData(foods);
   }, [foods]);
 
-  // const userID = JSON.parse(localStorage.getItem('user') || '{}')
-  // console.log(userID);
-
   const addToCartData = (value: Food) => {
     if (loggedInUser) {
       if (loggedInUser.id) {
@@ -43,11 +40,9 @@ const FeaturedRecipes = () => {
       } else {
         console.error("User ID is undefined. Cannot add to cart.");
       }
-      // addToCart(obj, loggedInUser.id.toString());
     } else {
       console.error("User is not logged in. Cannot add to cart.");
     }
-    // console.log("Added to Cart Successfully")
   };
 
   return (
@@ -97,9 +92,6 @@ const FeaturedRecipes = () => {
                     Price: ₹{food.price}
                   </CardDescription>
                 </div>
-                {/* <CardFooter className="flex justify-center">
-                        <Button variant='ghost' onClick={() => addToCartData(food.id.toString(), food)} className="w-full px-4 py-2 text-black bg-gray-300  hover:bg-gray-200 cursor-pointer hover:text-black">Add to Cart</Button>
-                    </CardFooter> */}
               </CardContent>
             </Card>
           </Link>

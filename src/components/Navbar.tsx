@@ -12,16 +12,14 @@ const Navbar = () => {
   const location = useLocation();
 
   const { cartList } = useCartList((ele) => ele);
-  // const catLists = JSON.parse(localStorage.getItem('cartStore') || '{}')
-  // console.log(cartList);
 
   const { logoutUser, loggedInUser } = useUserStore((ele) => ele);
 
   let cartPro = cartList.length;
-  // console.log(cartPro)
+
   const handleLogout = () => {
     cartPro = 0;
-    logoutUser(); // Call store action
+    logoutUser(); 
   };
 
   const isActive = (path: string) => {

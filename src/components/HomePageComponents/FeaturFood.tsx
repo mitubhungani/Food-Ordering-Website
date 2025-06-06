@@ -1,5 +1,5 @@
 import { useFoodStore } from "@/store/foodStore";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import {
   Card,
   CardContent,
@@ -14,11 +14,9 @@ const FeaturedFood = () => {
   // const navigate = useNavigate()
   const { id } = useParams<{ id: string }>();
   const { foods } = useFoodStore();
-  //   console.log(foods);
 
   // Find the current food item based on id
   const currentFood = foods.find((food) => food.id.toString() === id);
-  //   console.log(currentFood);
 
   const filterFood = foods.filter(
     (ele) =>
@@ -27,16 +25,6 @@ const FeaturedFood = () => {
         (type) => ele.mealType.includes(type) && ele.id !== currentFood.id
       )
   );
-
-  //   const handleClick=(id:string)=>{
-  //     navigate(`/food/${id}`)
-  //   }
-
-  //   const not = foods.filter((ele)=>ele.id === currentFood?.id ? ele:null )
-
-  //   console.log(not);
-
-  //   console.log(filterFood);
 
   return (
     <div className="p-4">
@@ -77,9 +65,6 @@ const FeaturedFood = () => {
                       Price: ₹{food.price}
                     </CardDescription>
                   </div>
-                  {/* <CardFooter className="flex justify-center">
-                        <Button variant='ghost' onClick={() => addToCartData(food.id.toString(), food)} className="w-full px-4 py-2 text-black bg-gray-300  hover:bg-gray-200 cursor-pointer hover:text-black">Add to Cart</Button>
-                    </CardFooter> */}
                 </CardContent>
               </Card>
             </Link>

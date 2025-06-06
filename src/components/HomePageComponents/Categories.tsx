@@ -1,21 +1,14 @@
 import { useFoodStore } from "@/store/foodStore";
-// import { Food } from '@/Types';
-// import React from 'react';
+
 import { Link } from "react-router-dom";
 
 const Categories = () => {
-  //  const [catData, setCatData] = React.useState<Food[]>([]);
-
   const { foods } = useFoodStore((ele) => ele);
 
   // Flattening the food categories and ensuring uniqueness
   const data = new Set(
     foods.flatMap((food) => food.mealType.map((ele) => ele))
   );
-
-  // React.useEffect(() => {
-  //     setCatData(foods);
-  // }, [foods]);
 
   return (
     <div className="p-4 box-border ">

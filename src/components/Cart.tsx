@@ -1,4 +1,6 @@
+
 import React from "react";
+
 import { useCartList } from "../store/cartStore";
 import { useUserStore } from "../store/userStore";
 import {
@@ -35,7 +37,7 @@ const Cart = () => {
       initializeCart(loggedInUser.id.toString());
     }
   }, []);
-
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
   const handleMinus = (ele: any) => {
     if (ele.qty <= 1) {
       removeFromCart(ele.id ? ele.id.toString() : "");
@@ -43,7 +45,7 @@ const Cart = () => {
     }
     updateCart(ele.id, { ...ele, qty: ele.qty - 1 });
   };
-
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
   const handlePlus = (ele: any) => {
     updateCart(ele.id, { ...ele, qty: ele.qty + 1 });
   };

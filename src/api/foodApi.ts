@@ -14,12 +14,6 @@ export const fetchFoodsAPI = async (): Promise<Food[]> => {
   return data;
 };
 
-// export const fetchSingleFoodsAPI = async (id:number): Promise<Food[]> => {
-//     const response = await api.get(`${id}`);
-//     const data = response.data;
-//     return data;
-// };
-
 export const addFoodAPI = async (food: Food): Promise<Food> => {
   const response = await api.post("/", food);
   const data = response.data;

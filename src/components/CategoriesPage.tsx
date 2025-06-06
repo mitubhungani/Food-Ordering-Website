@@ -1,4 +1,3 @@
-import React from "react";
 import Categories from "./HomePageComponents/Categories";
 
 const CategoriesPage = () => {

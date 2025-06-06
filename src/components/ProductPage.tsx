@@ -81,6 +81,7 @@ const ProductPage: React.FC = () => {
   }, [id]); // Re-fetch food when `id` changes
 
   //  State to store formatted reviews
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [not, setNot] = useState<any[]>([]);
 
   //  Fetch reviews when `id` or `reviews` changes

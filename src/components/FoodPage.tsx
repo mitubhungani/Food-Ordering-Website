@@ -89,9 +89,6 @@ const FoodPage = () => {
           >
             <FaSortAmountUp /> Price High to Low
           </Button>
-          {/* <Button onClick={sortHighestRated} variant="outline" className="flex items-center gap-2">
-                        <FaCrown className="text-yellow-500" /> Highest Rated
-                    </Button> */}
         </div>
       </div>
 
